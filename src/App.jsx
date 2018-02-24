@@ -5,9 +5,7 @@ import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
 import IconButton from 'material-ui/IconButton';
 import MenuIcon from 'material-ui-icons/Menu';
-import Drawer from 'material-ui/Drawer';
-import List from 'material-ui/List';
-import Divider from 'material-ui/Divider';
+import Menu from './Menu/Menu.jsx';
 
 const styles = {
   root: {
@@ -55,13 +53,7 @@ class App extends Component {
             </Typography>
           </Toolbar>
         </AppBar>
-        <Drawer open={this.state.menuOpen} onClose={this.closeMenu}>
-          <div>
-            <List>Home</List>
-            <Divider />
-            <List>Menu 2</List>
-          </div>
-        </Drawer>
+        <Menu open={this.state.menuOpen} onClose={this.closeMenu}/>
       </div>
     );
   }
