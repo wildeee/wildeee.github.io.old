@@ -1,29 +1,67 @@
 import React, { Component } from 'react';
-
 import { withStyles } from 'material-ui/styles';
 import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
+import IconButton from 'material-ui/IconButton';
+import MenuIcon from 'material-ui-icons/Menu';
+import Drawer from 'material-ui/Drawer';
+import List from 'material-ui/List';
+import Divider from 'material-ui/Divider';
 
 const styles = {
   root: {
     width: '100%',
-    paddingTop: '10px',
-    paddingRight: '20px'
+  },
+  menuName: {
+    margin: '0 auto'
+  },
+  header: {
+    marginBottom: '15px'
+  },
+  menuButton: {
+    marginLeft: -12,
+    marginRight: 20,
   },
 };
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      menuOpen: false,
+    };
+  }
+
+  openMenu = () => {
+    this.setState({ menuOpen: true });
+  };
+
+  closeMenu = () => {
+    this.setState({ menuOpen: false });
+  };
+
   render() {
+    const { classes } = this.props;
     return (
-      <div className={this.props.root}>
-        <AppBar position="static" color="default">
+      <div className={classes.root}>
+        <AppBar position="static" color="default" className={classes.header}>
           <Toolbar>
-            <Typography variant="title" color="inherit">
+            <IconButton className={classes.menuButton} color="inherit" aria-label="Menu" onClick={this.openMenu}>
+              <MenuIcon />
+            </IconButton>
+            <Typography variant="title" color="inherit" className={classes.menuName}>
               Bem vindo!
             </Typography>
           </Toolbar>
         </AppBar>
+        <Drawer open={this.state.menuOpen} onClose={this.closeMenu}>
+          <div>
+            <List>Home</List>
+            <Divider />
+            <List>Menu 2</List>
+          </div>
+        </Drawer>
       </div>
     );
   }
