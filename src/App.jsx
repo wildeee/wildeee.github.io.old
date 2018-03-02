@@ -12,14 +12,17 @@ const styles = {
     width: '100%',
   },
   menuName: {
-    margin: '0 auto'
+    margin: '0 auto',
   },
   header: {
-    marginBottom: '15px'
+    marginBottom: '15px',
   },
   menuButton: {
-    marginLeft: -12,
-    marginRight: 20,
+    position: 'absolute',
+    left: 10,
+  },
+  toolbar: {
+    position: 'relative',
   },
 };
 
@@ -44,7 +47,7 @@ class App extends Component {
     return (
       <div className={classes.root}>
         <AppBar position="static" color="default" className={classes.header}>
-          <Toolbar>
+          <Toolbar className={classes.toolbar}>
             <IconButton className={classes.menuButton} color="inherit" aria-label="Menu" onClick={this.openMenu}>
               <MenuIcon />
             </IconButton>
