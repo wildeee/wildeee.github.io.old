@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import { withStyles } from 'material-ui/styles';
-import AppBar from 'material-ui/AppBar';
-import Toolbar from 'material-ui/Toolbar';
-import Typography from 'material-ui/Typography';
-import IconButton from 'material-ui/IconButton';
-import MenuIcon from 'material-ui-icons/Menu';
 import Menu from './Menu/Menu.jsx';
+import AppBar from './AppBar/AppBar.jsx';
 
 const styles = {
   root: {
@@ -46,16 +42,7 @@ class App extends Component {
     const { classes } = this.props;
     return (
       <div className={classes.root}>
-        <AppBar position="static" color="default" className={classes.header}>
-          <Toolbar className={classes.toolbar}>
-            <IconButton className={classes.menuButton} color="inherit" aria-label="Menu" onClick={this.openMenu}>
-              <MenuIcon />
-            </IconButton>
-            <Typography variant="title" color="inherit" className={classes.menuName}>
-              Bem vindo!
-            </Typography>
-          </Toolbar>
-        </AppBar>
+        <AppBar onOpenMenu={this.openMenu}/>
         <Menu open={this.state.menuOpen} onClose={this.closeMenu}/>
       </div>
     );
