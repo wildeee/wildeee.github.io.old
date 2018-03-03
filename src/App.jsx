@@ -7,19 +7,6 @@ const styles = {
   root: {
     width: '100%',
   },
-  menuName: {
-    margin: '0 auto',
-  },
-  header: {
-    marginBottom: '15px',
-  },
-  menuButton: {
-    position: 'absolute',
-    left: 10,
-  },
-  toolbar: {
-    position: 'relative',
-  },
 };
 
 class App extends Component {
