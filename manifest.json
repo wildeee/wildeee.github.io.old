@@ -3,7 +3,12 @@
   "name": "Wilde Augusto Picciani Rossi",
   "icons": [
     {
-      "src": "pacman.png",
+      "src": "pacman144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "pacman64.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/png"
     }
