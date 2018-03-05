@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { withStyles } from 'material-ui/styles';
 import Menu from './Menu/Menu.jsx';
 import AppBar from './AppBar/AppBar.jsx';
+import Home from './Home/Home.jsx';
 
 const styles = {
   root: {
@@ -31,6 +32,7 @@ class App extends Component {
       <div className={classes.root}>
         <AppBar onOpenMenu={this.openMenu}/>
         <Menu open={this.state.menuOpen} onClose={this.closeMenu}/>
+        <Home/>
       </div>
     );
   }
