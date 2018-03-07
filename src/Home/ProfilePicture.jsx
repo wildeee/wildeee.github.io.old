@@ -12,12 +12,21 @@ class ProfilePicture extends Component {
     super(props);
     this.state = {};
     fetch('https://graph.facebook.com/745080472278255/picture?type=large')
-      .then(this.updatePicture);
-  }
+      .then(this.pictureUpdateSuccessful, this.pictureSearchFailed);
+  };
 
-  updatePicture = (data) => {
-    this.setState({ url: data.url });
-  }
+  pictureUpdateSuccessful = (data) => {
+    this.setPicture(data.url);
+  };
+
+  pictureSearchFailed = (err) => {
+    this.setPicture('default_avatar.jpg');
+  };
+
+  setPicture = (url) => {
+    this.setState({ url: url });
+  };
+
   render() {
     const { classes } = this.props;
     let img;
@@ -31,7 +40,7 @@ class ProfilePicture extends Component {
         {img}
       </div>
     );
-  }
+  };
 }
 
 export default withStyles(styles)(ProfilePicture);
