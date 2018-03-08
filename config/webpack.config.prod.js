@@ -327,6 +327,10 @@ module.exports = {
           urlPattern: /^https:\/\/graph\.facebook\.com/,
           handler: 'networkFirst',
         },
+        {
+          urlPattern: /^https:\/\/scontent\.xx\.fbcdn\.net/,
+          handler: 'networkFirst',
+        },
       ],
     }),
     // Moment.js is an extremely popular library that bundles large locale files

@@ -16,7 +16,6 @@ class ProfilePicture extends Component {
   };
 
   setPicture = (data) => {
-    console.log(data);
     this.setState({ url: data.url });
   };
 
