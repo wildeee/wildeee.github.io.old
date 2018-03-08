@@ -12,19 +12,12 @@ class ProfilePicture extends Component {
     super(props);
     this.state = {};
     fetch('https://graph.facebook.com/745080472278255/picture?type=large')
-      .then(this.pictureUpdateSuccessful, this.pictureSearchFailed);
+      .then(this.setPicture);
   };
 
-  pictureUpdateSuccessful = (data) => {
-    this.setPicture(data.url);
-  };
-
-  pictureSearchFailed = (err) => {
-    this.setPicture('default_avatar.jpg');
-  };
-
-  setPicture = (url) => {
-    this.setState({ url: url });
+  setPicture = (data) => {
+    console.log(data);
+    this.setState({ url: data.url });
   };
 
   render() {
