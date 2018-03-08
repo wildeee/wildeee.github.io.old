@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
+import { withStyles } from 'material-ui/styles';
 import Grid from 'material-ui/Grid';
 import ProfilePicture from './ProfilePicture.jsx';
 import Welcome from './Welcome.jsx';
 import Contacts from './Contacts.jsx';
 
+const styles = theme => ({
+  separator: {
+    marginTop: theme.spacing.unit,
+  },
+});
+
 class Home extends Component {
   render() {
+    const { classes } = this.props;
     return (
       <div>
         <Grid container>
@@ -16,10 +24,12 @@ class Home extends Component {
             <Contacts/>
           </Grid>
         </Grid>
-        <Welcome/>
+        <div className={classes.separator}>
+          <Welcome/>
+        </div>
       </div>
     );
   }
 }
 
-export default Home;
+export default withStyles(styles)(Home);
