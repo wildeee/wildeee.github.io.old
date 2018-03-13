@@ -4,7 +4,6 @@ import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
 import classNames from 'classnames';
 import SocialMediaButton from './SocialMediaButton.jsx';
 import FaLinkedinSquare from 'react-icons/lib/fa/linkedin-square';
-import blue from 'material-ui/colors/blue';
 
 const styles = theme => ({
   leftIcon: {
@@ -17,7 +16,11 @@ const styles = theme => ({
 
 const theme = createMuiTheme({
   palette: {
-    primary: blue,
+    primary: {
+      main: '#0077B5',
+      dark: '#1087C5',
+      contrastText: '#FFFFFF',
+    },
     contrastThreshold: 3,
     tonalOffset: 0.2,
   },

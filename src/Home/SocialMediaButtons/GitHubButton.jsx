@@ -4,7 +4,6 @@ import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
 import classNames from 'classnames';
 import SocialMediaButton from './SocialMediaButton.jsx';
 import FaGithubAlt from 'react-icons/lib/fa/github-alt';
-import grey from 'material-ui/colors/grey';
 
 const styles = theme => ({
   leftIcon: {
@@ -17,7 +16,11 @@ const styles = theme => ({
 
 const theme = createMuiTheme({
   palette: {
-    primary: grey,
+    primary: {
+      main: '#24292E',
+      dark: '#34393E',
+      contrastText: '#FFFFFF',
+    },
     contrastThreshold: 3,
     tonalOffset: 0.2,
   },
