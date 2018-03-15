@@ -2,8 +2,8 @@ import React, { PureComponent  } from 'react';
 import { withStyles } from 'material-ui/styles';
 import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
 import classNames from 'classnames';
-import SocialMediaButton from './SocialMediaButton.jsx';
 import FaFacebook from 'react-icons/lib/fa/facebook';
+import SocialMediaButton from './SocialMediaButton.jsx';
 
 const styles = theme => ({
   leftIcon: {
