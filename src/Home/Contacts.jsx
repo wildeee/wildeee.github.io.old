@@ -12,6 +12,9 @@ const styles = {
   iconSmall: {
     fontSize: 28,
   },
+  contactContainer: {
+    marginBottom: 10,
+  },
 };
 
 class Contacts extends Component {
@@ -21,29 +24,33 @@ class Contacts extends Component {
     const iconMail = (<FaEnvelopeO className={classes.iconSmall}/>);
     return (
       <div>
-        <Grid container>
-          <Grid item xs={12} sm={12} md={6}>
-            <ContactDiv icon={iconWhatsapp}>
-              44 99960-6007
-            </ContactDiv>
+        <div className={classes.contactContainer}>
+          <Grid container>
+            <Grid item xs={12} sm={12} md={6}>
+              <ContactDiv icon={iconWhatsapp}>
+                44 99960-6007
+              </ContactDiv>
+            </Grid>
+            <Grid item xs={12} sm={12} md={6}>
+              <ContactDiv icon={iconMail}>
+                gutopicciani@gmail.com
+              </ContactDiv>
+            </Grid>
           </Grid>
-          <Grid item xs={12} sm={12} md={6}>
-            <ContactDiv icon={iconMail}>
-              gutopicciani@gmail.com
-            </ContactDiv>
+        </div>
+        <div className={classes.contactContainer}>
+          <Grid container>
+            <Grid item xs={12} sm={12} md={4}>
+              <FacebookButton/>
+            </Grid>
+            <Grid item xs={12} sm={12} md={4}>
+              <LinkedInButton/>
+            </Grid>
+            <Grid item xs={12} sm={12} md={4}>
+              <GitHubButton/>
+            </Grid>
           </Grid>
-        </Grid>
-        <Grid container>
-          <Grid item xs={12} sm={12} md={4}>
-            <FacebookButton/>
-          </Grid>
-          <Grid item xs={12} sm={12} md={4}>
-            <LinkedInButton/>
-          </Grid>
-          <Grid item xs={12} sm={12} md={4}>
-            <GitHubButton/>
-          </Grid>
-        </Grid>
+        </div>
       </div>
     );
   }

@@ -17,10 +17,10 @@ class Home extends Component {
     return (
       <div>
         <Grid container>
-          <Grid item xs={12} sm={5} md={4} lg={3} xl={2}>
+          <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
             <ProfilePicture/>
           </Grid>
-          <Grid item xs={12} sm={7} md={8} lg={9} xl={10}>
+          <Grid item xs={12} sm={6} md={8} lg={9} xl={10}>
             <Contacts/>
           </Grid>
         </Grid>
