@@ -28,12 +28,12 @@ class Contacts extends Component {
           <Grid container>
             <Grid item xs={12} sm={12} md={6}>
               <ContactDiv icon={iconWhatsapp}>
-                44 99960-6007
+                <strong>44 99960-6007</strong>
               </ContactDiv>
             </Grid>
             <Grid item xs={12} sm={12} md={6}>
               <ContactDiv icon={iconMail}>
-                gutopicciani@gmail.com
+                <strong>gutopicciani@gmail.com</strong>
               </ContactDiv>
             </Grid>
           </Grid>

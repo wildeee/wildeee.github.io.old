@@ -7,7 +7,7 @@ class Welcome extends Component {
     const yearsOld = moment().diff('1994-10-18', 'years');
     return (
       <div>
-        <Typography variant="title" color="inherit" align="center" gutterBottom>
+        <Typography variant="title" align="center" gutterBottom>
           Olá!
         </Typography>
         <Typography variant="body2" align="justify">
