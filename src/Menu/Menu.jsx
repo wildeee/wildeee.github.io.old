@@ -17,8 +17,8 @@ class Menu extends Component {
     return (
       <Drawer open={this.props.open} onClose={this.props.onClose}>
         <div className={classes.menuWrapper}>
-          <MenuItem>Home</MenuItem>
-          <MenuItem>Experiências</MenuItem>
+          <MenuItem route="/" onSelectMenu={this.props.onClose}>Home</MenuItem>
+          <MenuItem route="/experiences" onSelectMenu={this.props.onClose}>Experiências</MenuItem>
         </div>
       </Drawer>
     );

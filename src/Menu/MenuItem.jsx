@@ -3,7 +3,7 @@ import { withStyles } from 'material-ui/styles';
 import List from 'material-ui/List';
 import Divider from 'material-ui/Divider';
 import Typography from 'material-ui/Typography';
-
+import { Link } from 'react-router-dom'
 
 const styles = {
   menu: {
@@ -11,6 +11,9 @@ const styles = {
     marginBottom: 10,
     marginLeft: 30,
     marginRight: 30,
+  },
+  link: {
+    textDecoration: 'none',
   },
 };
 
@@ -20,11 +23,13 @@ class MenuItem extends PureComponent {
     const { classes } = this.props;
     return (
       <div>
-        <List className={classes.menu}>
-          <Typography variant="title" align="center">
-            {this.props.children}
-          </Typography>
-        </List>
+        <Link to={this.props.route} onClick={this.props.onSelectMenu} className={classes.link}>
+          <List className={classes.menu}>
+            <Typography variant="title" align="center">
+              {this.props.children}
+            </Typography>
+          </List>
+        </Link>
         <Divider />
       </div>
     );
