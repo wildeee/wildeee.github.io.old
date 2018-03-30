@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { withStyles } from 'material-ui/styles';
 import Grid from 'material-ui/Grid';
 import ProfilePicture from './ProfilePicture.jsx';
@@ -11,14 +11,14 @@ const styles = theme => ({
   },
 });
 
-class Home extends Component {
+class Home extends PureComponent {
   render() {
     const { classes } = this.props;
     return (
       <div>
         <Grid container>
           <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
-            <ProfilePicture/>
+            <ProfilePicture pictureUrl={this.props.pictureUrl}/>
           </Grid>
           <Grid item xs={12} sm={6} md={8} lg={9} xl={10}>
             <Contacts/>

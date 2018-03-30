@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { withStyles } from 'material-ui/styles';
 
 const styles = {
@@ -7,24 +7,13 @@ const styles = {
   },
 };
 
-class ProfilePicture extends Component {
-  constructor (props) {
-    super(props);
-    this.state = {};
-    fetch('https://graph.facebook.com/745080472278255/picture?type=large')
-      .then(this.setPicture);
-  };
-
-  setPicture = (data) => {
-    this.setState({ url: data.url });
-  };
-
+class ProfilePicture extends PureComponent {
   render() {
     const { classes } = this.props;
     let img;
-    if (this.state.url) {
+    if (this.props.pictureUrl) {
       img = (
-        <img src={this.state.url} alt="" className={classes.img}/>
+        <img src={this.props.pictureUrl} alt="" className={classes.img}/>
       );
     }
     return (

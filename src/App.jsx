@@ -22,7 +22,12 @@ class App extends Component {
     this.state = {
       menuOpen: false,
     };
+    fetch('https://graph.facebook.com/745080472278255/picture?type=large').then(this.setPicture);
   }
+
+  setPicture = (data) => {
+    this.setState({ pictureUrl: data.url });
+  };
 
   openMenu = () => {
     this.setState({ menuOpen: true });
@@ -45,8 +50,8 @@ class App extends Component {
                 </Headroom>
                 <Menu open={this.state.menuOpen} onClose={this.closeMenu}/>
                 <div className={classes.body}>
-                  <Route path="/" exact component={Home}/>
-                  <Route path="/experiences" exact component={Expeciences}/>
+                  <Route path="/" exact render={ props => <Home pictureUrl={this.state.pictureUrl}/> }/>
+                  <Route path="/experiences" component={Expeciences}/>
                 </div>
               </div>
             )}/>
