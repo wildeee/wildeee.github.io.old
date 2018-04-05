@@ -37,6 +37,10 @@ class App extends Component {
     this.setState({ menuOpen: false });
   };
 
+  getHomeRoute = (props) => {
+    return (<Home pictureUrl={this.state.pictureUrl}/>);
+  };
+
   render() {
     const { classes } = this.props;
     return (
@@ -46,11 +50,11 @@ class App extends Component {
             <Route path="/" render={props => (
               <div>
                 <Headroom>
-                  <AppBar onOpenMenu={this.openMenu}/>
+                  <AppBar onOpenMenu={this.openMenu} routerProps={props}/>
                 </Headroom>
                 <Menu open={this.state.menuOpen} onClose={this.closeMenu}/>
                 <div className={classes.body}>
-                  <Route path="/" exact render={ props => <Home pictureUrl={this.state.pictureUrl}/> }/>
+                  <Route path="/" exact render={this.getHomeRoute}/>
                   <Route path="/experiences" component={Expeciences}/>
                 </div>
               </div>

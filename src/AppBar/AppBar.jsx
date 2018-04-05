@@ -5,13 +5,14 @@ import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
 import IconButton from 'material-ui/IconButton';
 import MenuIcon from 'material-ui-icons/Menu';
+import routeNamer from './RouteNamer';
 
 const styles = {
   menuName: {
     margin: '0 auto',
   },
   header: {
-    marginBottom: '15px',
+    marginBottom: 15,
   },
   menuButton: {
     position: 'absolute',
@@ -25,6 +26,7 @@ const styles = {
 
 class CustomAppBar extends Component {
   render() {
+    const menuName = routeNamer(this.props.routerProps.location.pathname);
     const { classes } = this.props;
     return (
       <AppBar position="static" color="default" className={classes.header}>
@@ -33,7 +35,7 @@ class CustomAppBar extends Component {
             <MenuIcon />
           </IconButton>
           <Typography variant="title" color="inherit" className={classes.menuName}>
-            Bem vindo!
+            {menuName}
           </Typography>
         </Toolbar>
       </AppBar>

@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
+import Grid from 'material-ui/Grid';
 
 class Experiences extends Component {
   render() {
     return (
-      <div>
-        Em desenvolvimento, aguarde!!!
-      </div>
+      <Grid container direction="column" alignItems="center">
+        <Grid item xs={12} md={9} lg={8} xl={6}>
+          <h2>Em desenvolvimento, aguarde!!!</h2>
+        </Grid>
+      </Grid>
     );
   }
 }
