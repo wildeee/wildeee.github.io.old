@@ -25,14 +25,6 @@ class App extends Component {
     this.setState({ pictureUrl: data.url });
   };
 
-  openMenu = () => {
-    this.setState({ menuOpen: true });
-  };
-
-  closeMenu = () => {
-    this.setState({ menuOpen: false });
-  };
-
   getHomeRoute = (props) => {
     return (<Home pictureUrl={this.state.pictureUrl}/>);
   };
