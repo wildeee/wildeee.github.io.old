@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { withStyles } from 'material-ui/styles';
-import Headroom from 'react-headroom';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import Menu from './Menu/Menu.jsx';
-import AppBar from './AppBar/AppBar.jsx';
+import AppBar from './AppBar';
 import Home from './Home/Home.jsx';
 import Expeciences from './Expeciences/Expeciences.jsx';
 
@@ -19,9 +17,7 @@ const styles = {
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      menuOpen: false,
-    };
+    this.state = {};
     fetch('https://graph.facebook.com/745080472278255/picture?type=large').then(this.setPicture);
   }
 
@@ -47,18 +43,11 @@ class App extends Component {
       <div className={classes.root}>
         <Router>
           <div>
-            <Route path="/" render={props => (
-              <div>
-                <Headroom>
-                  <AppBar onOpenMenu={this.openMenu} routerProps={props}/>
-                </Headroom>
-                <Menu open={this.state.menuOpen} onClose={this.closeMenu}/>
-                <div className={classes.body}>
-                  <Route path="/" exact render={this.getHomeRoute}/>
-                  <Route path="/experiences" component={Expeciences}/>
-                </div>
-              </div>
-            )}/>
+            <Route path="/" component={AppBar} />
+            <div className={classes.body}>
+              <Route path="/" exact render={this.getHomeRoute}/>
+              <Route path="/experiences" component={Expeciences}/>
+            </div>
           </div>
         </Router>
       </div>
