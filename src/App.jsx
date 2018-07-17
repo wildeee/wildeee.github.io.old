@@ -1,24 +1,24 @@
 import React, { Component } from 'react';
-import { withStyles } from 'material-ui/styles';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { withStyles } from 'material-ui/styles';
+import Grid from 'material-ui/Grid';
 import AppBar from './AppBar';
 import Home from './Home/Home.jsx';
 import Expeciences from './Expeciences/Expeciences.jsx';
 
 const styles = {
-  root: {
-    width: '100%',
-  },
   body: {
     padding: 10,
   },
 };
 
+const FACEBOOK_PICTURE_URL = 'https://graph.facebook.com/745080472278255/picture?type=large';
+
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {};
-    fetch('https://graph.facebook.com/745080472278255/picture?type=large').then(this.setPicture);
+    fetch(FACEBOOK_PICTURE_URL).then(this.setPicture);
   }
 
   setPicture = (data) => {
@@ -32,17 +32,17 @@ class App extends Component {
   render() {
     const { classes } = this.props;
     return (
-      <div className={classes.root}>
-        <Router>
-          <div>
-            <Route path="/" component={AppBar} />
-            <div className={classes.body}>
+      <Router>
+        <div>
+          <Route path="/" component={AppBar} />
+          <Grid container className={classes.body} spacing={0} justify="center">
+            <Grid item xs={12} lg={8} xl={7}>
               <Route path="/" exact render={this.getHomeRoute}/>
               <Route path="/experiences" component={Expeciences}/>
-            </div>
-          </div>
-        </Router>
-      </div>
+            </Grid>
+          </Grid>
+        </div>
+      </Router>
     );
   }
 }
