@@ -20,8 +20,8 @@ const styles = {
 class Contacts extends Component {
   render() {
     const { classes } = this.props;
-    const iconWhatsapp = (<FaWhatsapp className={classes.iconSmall}/>);
-    const iconMail = (<FaEnvelopeO className={classes.iconSmall}/>);
+    const iconWhatsapp = (<FaWhatsapp color="primary" className={classes.iconSmall}/>);
+    const iconMail = (<FaEnvelopeO color="primary" className={classes.iconSmall}/>);
     return (
       <div>
         <div className={classes.contactContainer}>
